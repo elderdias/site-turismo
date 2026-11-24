@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora Brasil — Viagens & Turismo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-earth-americas"></i>
+                Explora<span>Brasil</span>
+            </a>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#roteiros">Roteiros</a></li>
+                    <li><a href="#experiencias">Experiências</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#roteiros" class="btn btn-primary btn-sm">Reserve Agora</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO / BANNER CAROUSEL ========== -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-fire"></i> Destino mais procurado</span>
+                    <h1>Rio de Janeiro</h1>
+                    <p>Descubra a Cidade Maravilhosa — praias paradisíacas, o Cristo Redentor e uma cultura vibrante que encanta o mundo.</p>
+                    <div class="hero-btns">
+                        <a href="#roteiros" class="btn btn-primary"><i class="fa-solid fa-route"></i> Ver Roteiros</a>
+                        <a href="#destinos" class="btn btn-outline"><i class="fa-solid fa-play"></i> Explorar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1591604129939-f1efa4d99f7e?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-leaf"></i> Ecoturismo</span>
+                    <h1>Amazônia</h1>
+                    <p>Mergulhe na maior floresta tropical do planeta. Aventura, biodiversidade e experiências que transformam.</p>
+                    <div class="hero-btns">
+                        <a href="#roteiros" class="btn btn-primary"><i class="fa-solid fa-route"></i> Ver Roteiros</a>
+                        <a href="#destinos" class="btn btn-outline"><i class="fa-solid fa-play"></i> Explorar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1551279880-03af85c3e144?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-umbrella-beach"></i> Paraíso tropical</span>
+                    <h1>Fernando de Noronha</h1>
+                    <p>Águas cristalinas, vida marinha exuberante e paisagens de tirar o fôlego no arquipélago mais bonito do Brasil.</p>
+                    <div class="hero-btns">
+                        <a href="#roteiros" class="btn btn-primary"><i class="fa-solid fa-route"></i> Ver Roteiros</a>
+                        <a href="#destinos" class="btn btn-outline"><i class="fa-solid fa-play"></i> Explorar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-mountain-sun"></i> Aventura</span>
+                    <h1>Chapada Diamantina</h1>
+                    <p>Trilhas épicas, cachoeiras imensas e grutas de águas azuis no coração da Bahia.</p>
+                    <div class="hero-btns">
+                        <a href="#roteiros" class="btn btn-primary"><i class="fa-solid fa-route"></i> Ver Roteiros</a>
+                        <a href="#destinos" class="btn btn-outline"><i class="fa-solid fa-play"></i> Explorar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Controls -->
+        <div class="hero-controls">
+            <button class="slider-btn prev" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn next" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <!-- Search Bar -->
+        <div class="hero-search">
+            <div class="container">
+                <form class="search-form">
+                    <div class="search-field">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" placeholder="Para onde você quer ir?">
+                    </div>
+                    <div class="search-field">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <input type="date">
+                    </div>
+                    <div class="search-field">
+                        <i class="fa-solid fa-users"></i>
+                        <select>
+                            <option>1 viajante</option>
+                            <option>2 viajantes</option>
+                            <option>3 viajantes</option>
+                            <option>4+ viajantes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-search">
+                        <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS BAR ========== -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <div>
+                    <strong class="counter" data-target="150">0</strong><span>+</span>
+                    <p>Destinos</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <strong class="counter" data-target="12000">0</strong><span>+</span>
+                    <p>Viajantes felizes</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <strong class="counter" data-target="98">0</strong><span>%</span>
+                    <p>Satisfação</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-award"></i>
+                <div>
+                    <strong class="counter" data-target="15">0</strong>
+                    <p>Anos de experiência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DESTINOS POPULARES ========== -->
+    <section id="destinos" class="section destinos-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore o Brasil</span>
+                <h2>Destinos <span>Populares</span></h2>
+                <p>Conheça os lugares mais incríveis que separamos especialmente para você.</p>
+            </div>
+
+            <div class="destinos-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="praia">Praias</button>
+                <button class="filter-btn" data-filter="natureza">Natureza</button>
+                <button class="filter-btn" data-filter="cidade">Cidades</button>
+                <button class="filter-btn" data-filter="aventura">Aventura</button>
+            </div>
+
+            <div class="destinos-grid">
+                <!-- Card 1 -->
+                <div class="destino-card" data-category="praia">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=600&q=80');">
+                        <span class="card-badge praia">Praia</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Rio de Janeiro, RJ</div>
+                        <h3>Rio de Janeiro</h3>
+                        <p>Praias, montanhas e uma energia contagiante na Cidade Maravilhosa.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>4.8</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 1.290</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="destino-card" data-category="natureza">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1591604129939-f1efa4d99f7e?w=600&q=80');">
+                        <span class="card-badge natureza">Natureza</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Manaus, AM</div>
+                        <h3>Amazônia</h3>
+                        <p>A maior floresta tropical do mundo, repleta de vida e aventuras inesquecíveis.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 2.450</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="destino-card" data-category="praia">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551279880-03af85c3e144?w=600&q=80');">
+                        <span class="card-badge praia">Praia</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Fernando de Noronha, PE</div>
+                        <h3>Fernando de Noronha</h3>
+                        <p>Paraíso ecológico com águas cristalinas e vida marinha espetacular.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 3.800</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="destino-card" data-category="aventura">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=600&q=80');">
+                        <span class="card-badge aventura">Aventura</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Lençóis, BA</div>
+                        <h3>Chapada Diamantina</h3>
+                        <p>Trilhas, cachoeiras e grutas num dos cenários mais deslumbrantes do país.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <span>4.7</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 1.750</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="destino-card" data-category="cidade">
+                    <div class="card-img" style="background-image: url('img/salvador.jpg');">
+                        <span class="card-badge cidade">Cidade</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Salvador, BA</div>
+                        <h3>Salvador</h3>
+                        <p>História, cultura afro-brasileira, Pelourinho e praias deslumbrantes.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 980</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="destino-card" data-category="natureza">
+                    <div class="card-img" style="background-image: url('img/foz-do-iguacu.jpg');">
+                        <span class="card-badge natureza">Natureza</span>
+                        <button class="card-fav"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-location"><i class="fa-solid fa-location-dot"></i> Foz do Iguaçu, PR</div>
+                        <h3>Cataratas do Iguaçu</h3>
+                        <p>Uma das 7 maravilhas naturais do mundo. Poder e beleza indescritíveis.</p>
+                        <div class="card-meta">
+                            <div class="card-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                            <div class="card-price">A partir de <strong>R$ 1.100</strong></div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-block">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ROTEIROS ========== -->
+    <section id="roteiros" class="section roteiros-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pacotes Especiais</span>
+                <h2>Nossos <span>Roteiros</span></h2>
+                <p>Roteiros completos pensados para cada estilo de viajante.</p>
+            </div>
+
+            <div class="roteiros-grid">
+                <!-- Roteiro 1 -->
+                <div class="roteiro-card featured">
+                    <div class="roteiro-badge">🔥 Mais vendido</div>
+                    <div class="roteiro-img" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80');">
+                    </div>
+                    <div class="roteiro-body">
+                        <div class="roteiro-tags">
+                            <span><i class="fa-solid fa-clock"></i> 5 dias</span>
+                            <span><i class="fa-solid fa-utensils"></i> Café incluso</span>
+                            <span><i class="fa-solid fa-hotel"></i> Hotel 4★</span>
+                        </div>
+                        <h3>Rio Completo — Sol, Cultura & Aventura</h3>
+                        <p>Cristo Redentor, Pão de Açúcar, Lapa, Copacabana, trilha no Morro da Urca e passeio de barco pela Baía de Guanabara.</p>
+                        <ul class="roteiro-includes">
+                            <li><i class="fa-solid fa-check"></i> Passagem aérea ida e volta</li>
+                            <li><i class="fa-solid fa-check"></i> Traslado aeroporto-hotel</li>
+                            <li><i class="fa-solid fa-check"></i> Guia turístico bilíngue</li>
+                            <li><i class="fa-solid fa-check"></i> Seguro viagem</li>
+                        </ul>
+                        <div class="roteiro-footer">
+                            <div class="roteiro-price">
+                                <span class="old-price">R$ 2.590</span>
+                                <span class="new-price">R$ 1.890</span>
+                                <span class="per-person">por pessoa</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Roteiro 2 -->
+                <div class="roteiro-card">
+                    <div class="roteiro-img" style="background-image: url('https://images.unsplash.com/photo-1591604129939-f1efa4d99f7e?w=800&q=80');">
+                    </div>
+                    <div class="roteiro-body">
+                        <div class="roteiro-tags">
+                            <span><i class="fa-solid fa-clock"></i> 7 dias</span>
+                            <span><i class="fa-solid fa-utensils"></i> Pensão completa</span>
+                            <span><i class="fa-solid fa-campground"></i> Lodge</span>
+                        </div>
+                        <h3>Amazônia Selvagem — Expedição na Selva</h3>
+                        <p>Navegação pelo Rio Negro, trilhas na selva, observação de fauna, visita a comunidades ribeirinhas e pesca de piranhas.</p>
+                        <ul class="roteiro-includes">
+                            <li><i class="fa-solid fa-check"></i> Voo até Manaus</li>
+                            <li><i class="fa-solid fa-check"></i> Lodge na selva</li>
+                            <li><i class="fa-solid fa-check"></i> Guia naturalista</li>
+                            <li><i class="fa-solid fa-check"></i> Todas as refeições</li>
+                        </ul>
+                        <div class="roteiro-footer">
+                            <div class="roteiro-price">
+                                <span class="old-price">R$ 4.200</span>
+                                <span class="new-price">R$ 3.490</span>
+                                <span class="per-person">por pessoa</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Roteiro 3 -->
+                <div class="roteiro-card">
+                    <div class="roteiro-img" style="background-image: url('https://images.unsplash.com/photo-1551279880-03af85c3e144?w=800&q=80');">
+                    </div>
+                    <div class="roteiro-body">
+                        <div class="roteiro-tags">
+                            <span><i class="fa-solid fa-clock"></i> 4 dias</span>
+                            <span><i class="fa-solid fa-utensils"></i> Café incluso</span>
+                            <span><i class="fa-solid fa-hotel"></i> Pousada</span>
+                        </div>
+                        <h3>Noronha Paradisíaco — Mergulho & Relax</h3>
+                        <p>Baía do Sancho, mergulho com tartarugas e golfinhos, trilha do Atalaia e pôr do sol no Forte dos Remédios.</p>
+                        <ul class="roteiro-includes">
+                            <li><i class="fa-solid fa-check"></i> Voo até Noronha</li>
+                            <li><i class="fa-solid fa-check"></i> Taxa de preservação</li>
+                            <li><i class="fa-solid fa-check"></i> Mergulho com instrutor</li>
+                            <li><i class="fa-solid fa-check"></i> Buggy pela ilha</li>
+                        </ul>
+                        <div class="roteiro-footer">
+                            <div class="roteiro-price">
+                                <span class="old-price">R$ 5.900</span>
+                                <span class="new-price">R$ 4.790</span>
+                                <span class="per-person">por pessoa</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Roteiro 4 -->
+                <div class="roteiro-card">
+                    <div class="roteiro-img" style="background-image: url('img/salvador.jpg');">
+                    </div>
+                    <div class="roteiro-body">
+                        <div class="roteiro-tags">
+                            <span><i class="fa-solid fa-clock"></i> 6 dias</span>
+                            <span><i class="fa-solid fa-utensils"></i> Café incluso</span>
+                            <span><i class="fa-solid fa-hotel"></i> Hotel 3★</span>
+                        </div>
+                        <h3>Salvador & Morro de São Paulo</h3>
+                        <p>Pelourinho, acarajé, Elevador Lacerda, e depois as praias paradisíacas de Morro de São Paulo.</p>
+                        <ul class="roteiro-includes">
+                            <li><i class="fa-solid fa-check"></i> Passagem aérea</li>
+                            <li><i class="fa-solid fa-check"></i> City tour Salvador</li>
+                            <li><i class="fa-solid fa-check"></i> Lancha até Morro</li>
+                            <li><i class="fa-solid fa-check"></i> Passeio de lancha</li>
+                        </ul>
+                        <div class="roteiro-footer">
+                            <div class="roteiro-price">
+                                <span class="old-price">R$ 2.100</span>
+                                <span class="new-price">R$ 1.590</span>
+                                <span class="per-person">por pessoa</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIÊNCIAS ========== -->
+    <section id="experiencias" class="section experiencias-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Viva cada momento</span>
+                <h2>Tipos de <span>Experiência</span></h2>
+                <p>Escolha o estilo de viagem que combina com você.</p>
+            </div>
+
+            <div class="exp-grid">
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <h3>Praias & Resorts</h3>
+                    <p>Relaxe em praias paradisíacas com águas cristalinas e areia branca.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-person-hiking"></i></div>
+                    <h3>Aventura & Trilhas</h3>
+                    <p>Adrenalina pura com trilhas, rapel, rafting e escalada.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>Cultura & História</h3>
+                    <p>Mergulhe na rica herança cultural e histórica do Brasil.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Gastronomia</h3>
+                    <p>Sabores únicos em tours gastronômicos e experiências culinárias.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Ecoturismo</h3>
+                    <p>Conexão com a natureza de forma sustentável e responsável.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Lua de Mel</h3>
+                    <p>Destinos românticos perfeitos para casais apaixonados.</p>
+                    <a href="#">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BANNER PROMOCIONAL ========== -->
+    <section class="promo-banner">
+        <div class="promo-overlay"></div>
+        <div class="container promo-content">
+            <span class="promo-tag">🎉 Oferta Especial de Verão</span>
+            <h2>Até <span>40% OFF</span> em pacotes selecionados</h2>
+            <p>Reserve até 15 de dezembro e garanta descontos imperdíveis para suas férias de verão. Parcele em até 12x sem juros!</p>
+            <div class="promo-timer">
+                <div class="timer-item">
+                    <span id="days">00</span>
+                    <small>Dias</small>
+                </div>
+                <div class="timer-item">
+                    <span id="hours">00</span>
+                    <small>Horas</small>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes">00</span>
+                    <small>Min</small>
+                </div>
+                <div class="timer-item">
+                    <span id="seconds">00</span>
+                    <small>Seg</small>
+                </div>
+            </div>
+            <a href="#roteiros" class="btn btn-primary btn-lg">Aproveitar Oferta <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- ========== DEPOIMENTOS ========== -->
+    <section id="depoimentos" class="section depoimentos-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">O que dizem sobre nós</span>
+                <h2>Depoimentos de <span>Viajantes</span></h2>
+                <p>Histórias reais de quem viveu experiências inesquecíveis com a gente.</p>
+            </div>
+
+            <div class="depoimentos-slider">
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-text">"A viagem para Fernando de Noronha foi simplesmente mágica! Tudo organizado com perfeição, desde o voo até os passeios. Mergulhar com as tartarugas foi um sonho realizado!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <div>
+                            <strong>Marina Costa</strong>
+                            <span>Viajou para Noronha — Nov/2026</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-text">"Levei a família toda para a Amazônia e foi a melhor decisão! As crianças adoraram ver os botos, e a noite na selva foi inesquecível. Atendimento nota 10!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div>
+                            <strong>Ricardo Almeida</strong>
+                            <span>Viajou para Amazônia — Set/2026</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="depoimento-card">
+                    <div class="depoimento-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="depoimento-text">"O roteiro de Salvador e Morro de São Paulo superou todas as expectativas. A comida baiana, o povo acolhedor e as praias... quero voltar já!"</p>
+                    <div class="depoimento-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                        <div>
+                            <strong>Camila Oliveira</strong>
+                            <span>Viajou para Salvador — Ago/2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALERIA ========== -->
+    <section id="galeria" class="section galeria-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">#ExploraBrasil</span>
+                <h2>Galeria de <span>Fotos</span></h2>
+                <p>Momentos capturados pelos nossos viajantes.</p>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item large" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Rio de Janeiro</span></div>
+                </div>
+                <div class="galeria-item" style="background-image: url('img/foz-do-iguacu.jpg');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Foz do Iguaçu</span></div>
+                </div>
+                <div class="galeria-item" style="background-image: url('img/salvador.jpg');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Salvador</span></div>
+                </div>
+                <div class="galeria-item tall" style="background-image: url('https://images.unsplash.com/photo-1587162146766-e06b1189b907?w=600&q=80');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Chapada Diamantina</span></div>
+                </div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1591604129939-f1efa4d99f7e?w=600&q=80');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Amazônia</span></div>
+                </div>
+                <div class="galeria-item" style="background-image: url('https://images.unsplash.com/photo-1551279880-03af85c3e144?w=600&q=80');">
+                    <div class="galeria-overlay"><i class="fa-solid fa-expand"></i><span>Noronha</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER ========== -->
+    <section class="newsletter-section">
+        <div class="container newsletter-content">
+            <div class="newsletter-text">
+                <h2><i class="fa-solid fa-paper-plane"></i> Receba ofertas exclusivas</h2>
+                <p>Cadastre-se e receba promoções, dicas de viagem e roteiros especiais direto no seu e-mail.</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn btn-primary">Inscrever-se</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato" class="section contato-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fale conosco</span>
+                <h2>Entre em <span>Contato</span></h2>
+                <p>Estamos prontos para planejar a viagem dos seus sonhos.</p>
+            </div>
+
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <div class="info-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Av. Paulista, 1000 — Sala 1201<br>São Paulo, SP — 01310-100</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 3456-7890<br>(11) 98765-4321 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@explorabrasil.com.br<br>reservas@explorabrasil.com.br</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Seg a Sex: 9h às 18h<br>Sáb: 9h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contato-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome completo</label>
+                            <input type="text" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="tel" placeholder="(00) 00000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label>Destino de interesse</label>
+                            <select>
+                                <option>Selecione um destino</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Amazônia</option>
+                                <option>Fernando de Noronha</option>
+                                <option>Chapada Diamantina</option>
+                                <option>Salvador</option>
+                                <option>Foz do Iguaçu</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem</label>
+                        <textarea rows="5" placeholder="Conte-nos sobre a viagem dos seus sonhos..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C320,100 620,0 960,50 C1200,90 1380,20 1440,40 L1440,100 L0,100 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        Explora<span>Brasil</span>
+                    </a>
+                    <p>Transformando sonhos em viagens inesquecíveis há mais de 15 anos. Conheça o Brasil da forma que ele merece ser visto.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Destinos</h4>
+                    <ul>
+                        <li><a href="#">Rio de Janeiro</a></li>
+                        <li><a href="#">Amazônia</a></li>
+                        <li><a href="#">Fernando de Noronha</a></li>
+                        <li><a href="#">Chapada Diamantina</a></li>
+                        <li><a href="#">Salvador</a></li>
+                        <li><a href="#">Foz do Iguaçu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Blog de Viagem</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Pagamento</h4>
+                    <p>Aceitamos as principais formas de pagamento:</p>
+                    <div class="payment-icons">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-amex"></i>
+                        <i class="fa-brands fa-pix"></i>
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                    <p class="parcelamento">Parcele em até <strong>12x sem juros</strong></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ExploraBrasil — Todos os direitos reservados. CNPJ: 00.000.000/0001-00 | CADASTUR: 00.000000.00.0000-0</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOAT ========== -->
+    <a href="https://wa.me/5511987654321" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
